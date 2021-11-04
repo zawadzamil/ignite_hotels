@@ -67,44 +67,46 @@
 @php
     $hotels = \App\Models\Hotel::all();
 @endphp
+<div id="fh5co-wrapper">
+    <div id="fh5co-page">
+        <div id="fh5co-header">
+            <header id="fh5co-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                        <h1 id="fh5co-logo"><a href="{{url('/')}}">Ignite</a></h1>
+                        <nav id="fh5co-menu-wrap" role="navigation">
+                            <ul class="sf-menu" id="fh5co-primary-menu">
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li>
+                                    <a href="" class="fh5co-sub-ddown">Hotel</a>
+                                    <ul class="fh5co-sub-menu">
+                                        @foreach($hotels as $hotel)
+                                            <li><a href="{{url('hotel',$hotel->id)}}">{{$hotel->name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li><a href="{{url('services')}}">Services</a></li>
+                                @if(Auth::user())
+                                    <li>
 
-<div id="fh5co-header">
-    <header id="fh5co-header-section">
-        <div class="container">
-            <div class="nav-header">
-                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-                <h1 id="fh5co-logo"><a href="{{url('/')}}">Ignite</a></h1>
-                <nav id="fh5co-menu-wrap" role="navigation">
-                    <ul class="sf-menu" id="fh5co-primary-menu">
-                        <li><a href="{{url('/')}}">Home</a></li>
-                        <li>
-                            <a href="" class="fh5co-sub-ddown">Hotel</a>
-                            <ul class="fh5co-sub-menu">
-                                @foreach($hotels as $hotel)
-                                    <li><a href="{{url('hotel',$hotel->id)}}">{{$hotel->name}}</a></li>
-                                @endforeach
+                                        <a href="{{url('profile')}}">
+                                            <i class="fa fa-user"></i>
+                                            {{Auth::user()->name}}</a></li>
+                                    <li><a href="{{url('logout')}}">Logout</a></li>
+
+                                @else
+                                    <li><a href="{{url('login')}}">Login</a></li>
+                                @endif
+                                <li><a  href="{{url('contact')}}">Contact</a></li>
                             </ul>
-                        </li>
-                        <li><a class="active" href="{{url('services')}}">Services</a></li>
-                        @if(Auth::user())
-                            <li>
+                        </nav>
+                    </div>
+                </div>
+            </header>
 
-                                <a href="{{url('profile')}}">
-                                    <i class="fa fa-user"></i>
-                                    {{Auth::user()->name}}</a></li>
-                            <li><a href="{{url('logout')}}">Logout</a></li>
-
-                        @else
-                            <li><a href="{{url('login')}}">Login</a></li>
-                        @endif
-                        <li><a href="{{url('contact')}}">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
         </div>
-    </header>
 
-</div>
 <!-- end:fh5co-header -->
 @yield('body_parts')
 <footer id="footer" class="fh5co-bg-color">
@@ -161,6 +163,8 @@
         </div>
     </div>
 </footer>
+    </div>
+</div>
 
 
 

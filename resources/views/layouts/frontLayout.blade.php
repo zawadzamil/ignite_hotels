@@ -67,7 +67,8 @@
 @php
 $hotels = \App\Models\Hotel::all();
 @endphp
-
+<div id="fh5co-wrapper">
+    <div id="fh5co-page">
 <div id="fh5co-header">
     <header id="fh5co-header-section">
         <div class="container">
@@ -105,6 +106,7 @@ $hotels = \App\Models\Hotel::all();
     </header>
 
 </div>
+
 <!-- end:fh5co-header -->
 @yield('body_parts')
 <footer id="footer" class="fh5co-bg-color">
@@ -161,6 +163,8 @@ $hotels = \App\Models\Hotel::all();
         </div>
     </div>
 </footer>
+    </div>
+</div>
 
 
 
