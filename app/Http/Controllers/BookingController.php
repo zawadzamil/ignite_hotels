@@ -55,7 +55,7 @@ class BookingController extends Controller
             'check_out'=>$request->check_out,
         ]);
         $reservation->save();
-        return redirect('/')->with('succes','Your Room is Reserved Successfully!');
+        return redirect('/')->with('success','Your Room is Reserved Successfully!');
     }
 
     /**
