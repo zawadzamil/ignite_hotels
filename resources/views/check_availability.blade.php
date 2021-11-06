@@ -88,7 +88,7 @@ $days = (int)(($datetime2 - $datetime1)/86400);
 @foreach( $room as $r)
     @foreach($reservedRoomId as $rid)
         @if(($r->id)==$rid)
-            @continue
+            @break
           @else
 
         <div class="container" id="result">
