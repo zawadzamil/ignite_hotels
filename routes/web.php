@@ -28,6 +28,9 @@ Route::get('booking', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+Route::get('registerAdmin', function () {
+    return view('auth.registerAdmin');
+});
 
 Route::get('confirmBooking','App\Http\Controllers\DashboardController@confirmBooking');
 Route::post('book','App\Http\Controllers\BookingController@store');
@@ -44,6 +47,7 @@ Route::get('messages','App\Http\Controllers\DashboardController@messages');
 Route::get('/dashboard','App\Http\Controllers\DashboardController@index');
 
 Route::get('logout', '\App\Http\Controllers\DashboardController@logout');
+Route::post('registeranadmin', '\App\Http\Controllers\Auth\RegisteredUserController@registerAdmin');
 
 
 // Hotel Routes
