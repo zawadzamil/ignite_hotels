@@ -56,7 +56,7 @@ $days = (int)(($datetime2 - $datetime1)/86400);
                                         <input type="text" name="check_out" class="form-control" id="date-end"  required/>
                                     </div>
                                 </div>
-                                <section  style="margin-top: 14px;margin-right: 5px;width: 20%;">
+                                <section  style="margin-top: 14px;margin-right: 5px;width: 40%;">
                                     <select class="cs-select cs-skin-border" name="type" required>
                                         <option value="" disabled selected>Room Type</option>
                                         <option value="single">S - 1 single bed for 1 person</option>
@@ -94,30 +94,30 @@ $days = (int)(($datetime2 - $datetime1)/86400);
         <div class="container" id="result">
             <div class="row">
 
-                <div class="col-md-3" style="display: inline;" >
-                    <div class="img">
-                        <img src="public/assets/hotel/room/{{\App\Models\Room::where('id',$r->id)->value('image')}}" style="width: 100%;height: 100%; object-fit: contain;"/>
+                <div class="col-md-3"  >
 
-                    </div>
+                        <img src="public/assets/hotel/room/{{\App\Models\Room::where('id',$r->id)->value('image')}}" style="width: 300px;height: 160px; object-fit: contain; "/>
+
+
                 </div>
-                <div class="col-md-3" style="display: inline;margin-top: 40px;" >
+                <div class="col-md-3"  >
                     <ul class="list-group" id="details">
                         <li class="list-group-item">Room No:{{$r->id}}</li>
                         <li class="list-group-item">Type: {{\App\Models\Room::where('id',$r->id)->value('type')}}</li>
                         <li class="list-group-item">Per Night Cost: ${{\App\Models\Room::where('id',$r->id)->value('rent')}}</li>
                     </ul>
                 </div>
-                <div class="col-md-3" style="display: inline;margin-top: 40px;">
-                    <div class="inclusion">
-                        <ul style="list-style-type: none; font-size: 15px;margin-top: 10px;">
+                <div class="col-md-3" >
+
+                        <ul >
                         <li><i class="fa fa-check-square-o"></i> Breakfast</li>
                         <li><i class="fa fa-check-square-o"></i>Complimentary Wi-F</li>
                         <li><i class="fa fa-check-square-o"></i>Non Refundable</li>
 
                         </ul>
-                    </div>
+
                 </div>
-                <div class="col-md-3" style="display: inline;text-align: center;">
+                <div class="col-md-3" >
                     <ul style="list-style-type: none">
                         <li>
                             <p style="margin-top: 40%;">
@@ -174,7 +174,7 @@ $days = (int)(($datetime2 - $datetime1)/86400);
         }
         #result{
             width: 100%;
-            height: 300px;
+            height: 100%;
             background-color: white;
         }
         #details{
