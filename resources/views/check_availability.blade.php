@@ -56,7 +56,7 @@ $days = (int)(($datetime2 - $datetime1)/86400);
                                         <input type="text" name="check_out" class="form-control" id="date-end"  required/>
                                     </div>
                                 </div>
-                                <section  style="margin-top: 14px;margin-right: 5px;width: 40%;">
+                                <section  style="margin-top: 14px;width:300px;">
                                     <select class="cs-select cs-skin-border" name="type" required>
                                         <option value="" disabled selected>Room Type</option>
                                         <option value="single">S - 1 single bed for 1 person</option>
