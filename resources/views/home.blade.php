@@ -177,36 +177,36 @@
 
                                         <option value="" disabled selected>Select Hotel</option>
                                         @foreach($hotels as $hotel)
-                                        <option value="{{$hotel->id}}">{{$hotel->name}}</option>
+                                            <option value="{{$hotel->id}}">{{$hotel->name}}</option>
 
-                                            @endforeach
+                                        @endforeach
                                     </select>
                                 </section>
                             </div>
                             <div class="a-col alternate">
                                 <div class="input-field">
                                     <label for="date-start">Check In</label>
-                                    <input type="text" name="check_in" class="form-control" id="date-start" />
+                                    <input type="text" name="check_in" class="form-control" id="date-start"  required/>
                                 </div>
                             </div>
                             <div class="a-col alternate">
                                 <div class="input-field">
                                     <label for="date-end">Check Out</label>
-                                    <input type="text" name="check_out" class="form-control" id="date-end" />
+                                    <input type="text" name="check_out" class="form-control" id="date-end"  required/>
                                 </div>
                             </div>
-                            <section  style="margin-top: 14px;margin-right: 5px;width: 20%;">
-                                <select class="cs-select cs-skin-border" name="type">
+                            <section  style="margin-top: 14px;width:299px;">
+                                <select class="cs-select cs-skin-border" name="type" required>
                                     <option value="" disabled selected>Room Type</option>
                                     <option value="single">S - 1 single bed for 1 person</option>
-                                    <option value="medium">M- 2 Bed for 2 Adult</option>
+                                    <option value="medium">M - 2 Bed for 2 Adult</option>
                                     <option value="large">L - Large Room for 2 Adults and 2 Kid</option>
-                                    <option value="romantic">R - 1 bed for Couple</option>
+                                    <option value="romantic">R- 1 bed for Couple</option>
                                     <option value="slarge">SL - 2 bed for 2 Adults and 1/2 Kids</option>
                                 </select>
                             </section>
                             <div class="a-col action">
-                               <button class="btn btn-primary btn-block" type="submit">Check</button>
+                                <button class="btn btn-primary btn-block" type="submit">Check</button>
                             </div>
                         </form>
 
